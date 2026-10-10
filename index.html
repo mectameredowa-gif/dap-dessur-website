@@ -159,7 +159,7 @@ footer { padding: 22px 6%; font-size: 13px; color: var(--muted); }
       <div class="eyebrow" style="color:#e7d9b9" data-t="contactLabel">Habarlaşyň</div>
       <h2 data-t="contactTitle">Önüm ýa-da hyzmatdaşlyk barada soraň</h2>
       <p class="section-intro" data-t="contactIntro">Önümler, aýratyn sargytlar we hyzmatdaşlyk mümkinçilikleri barada habarlaşyň.</p>
-      <p data-t="contactHint">Habarlaşmak üçin öz telefon belgiňizi ýa-da e-poçtaňyzy goşuň.</p>
+      <p data-t="contact+99361893832Hint">Habarlaşmak üçin öz telefon belgiňizi ýa-da e-poçtaňyzy goşuň.</p>
     </div>
   </section>
 </main>
@@ -240,7 +240,15 @@ function setLanguage(lang) {
   });
   document.querySelectorAll(".order").forEach(el => {
     const key = el.dataset.product;
-    el.href = "#contact";
+    el.href = "#conconst product = translations[lang][key];
+const messages = {
+  tk: "Salam! Men «" + product + "» bilen gyzyklanýaryn. Bahasyny aýdyp bilersiňizmi?",
+  ru: "Здравствуйте! Меня интересует товар «" + product + "». Подскажите, пожалуйста, цену.",
+  en: "Hello! I am interested in “" + product + "”. Could you please tell me the price?"
+};
+el.href = "https://wa.me/99361893832?text=" + encodeURIComponent(messages[lang]);
+el.target = "_blank";
+el.rel = "noopener noreferrer";tact";
     el.setAttribute("aria-label", translations[lang].ask + ": " + translations[lang][key]);
   });
 }
